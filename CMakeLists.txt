@@ -14,7 +14,7 @@ if(DEFINED WARNINGS_AS_ERRORS)
 elseif(DEFINED ENV{WARNINGS_AS_ERRORS})
   set(WARNINGS_AS_ERRORS $ENV{WARNINGS_AS_ERRORS})
 else()
-  set(WARNINGS_AS_ERRORS ON)
+  set(WARNINGS_AS_ERRORS OFF)
 endif()
 
 # disable them when releasing executables without explicitly requested debug info
@@ -76,7 +76,7 @@ sfml_set_custom_stdlib(sfml-graphics)
 ###############################################################################
 
 # NOTE: update executable name in .github/workflows/cmake.yml when changing name here
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} main.cpp Buldozer.cpp Buldozer.h Tractor.cpp Tractor.h Echipament.h Utilaj.cpp Utilaj.h Muncitor.cpp Muncitor.h)
 
 ###############################################################################
 

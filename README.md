@@ -1,9 +1,7 @@
 # OOP test 2 262
 
-### Tema 0
+### Ce face proiectul acesta
 
-- [ ] Nume proiect (îl puteți schimba ulterior)
-- [ ] Scurtă descriere a temei alese, ce v-ați propus să implementați
 
 ## Tema 1
 

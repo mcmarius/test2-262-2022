@@ -1,31 +1,157 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Buldozer.h"
+#include "Tractor.h"
+#include "Muncitor.h"
 
-
-class SomeClass {
+class scoala {
+    int nr_elevi = 1;
 public:
-    explicit SomeClass(int) {}
+    scoala() = default;
+
+    scoala(const scoala &) {
+        std::cout << "cc scoala\n";
+    }
+
+    scoala &operator=(const scoala &) {
+        std::cout << "op= scoala\n";
+        return *this;
+    }
+
+    void f() { ++nr_elevi; }
+
+    friend std::ostream &operator<<(std::ostream &os, const scoala &scoala) {
+        os << "nr_elevi: " << scoala.nr_elevi << "\n";
+        return os;
+    }
 };
 
-SomeClass *getC() {
-    return new SomeClass{2};
+class tabla0 {
+};
+
+class tabla1 {
+    void f() {}
+};
+
+class tabla2 {
+    virtual void f() {}
+
+    virtual void g() {}
+
+    virtual void h() {}
+
+    virtual void h2() {}
+
+    virtual void h3() {}
+
+    virtual ~tabla2() {}
+};
+
+class cls1 {
+    char t;
+    int u;
+    double v;
+    char w;
+    long long x;
+};
+
+class cls2 {
+    char t;
+    char w;
+    int u;
+    double v;
+    long long x;
+};
+
+class cls3 {
+    double v;
+    long long x;
+    int u;
+    char t;
+    char w;
+    char w1;
+    char w2;
+    char w3;
+    char w4;
+    char w5;
+};
+
+
+class baza {
+public:
+    virtual void f() { std::cout << "f baza\n"; }
+};
+
+class derivata : public baza {
+public:
+    void f() { std::cout << "f derivata\n"; }
+};
+
+void g1(baza &b) {
+    b.f();
 }
 
+void g2(baza *b) {
+    b->f();
+}
+
+void h(baza b) {
+    b.f();
+}
+
+
 int main() {
-    SomeClass *c = getC();
-    std::cout << c << "\n";
-    delete c;
+//    baza b;
+//    derivata d;
+//    std::cout << "----- g1(b) -----\n";
+//    g1(b);
+//    std::cout << "----- g2(&b) -----\n";
+//    g2(&b);
+//    std::cout << "----- h(b) -----\n";
+//    h(b);
+//    std::cout << "----- g1(d) -----\n";
+//    g1(d);
+//    std::cout << "----- g2(&d) -----\n";
+//    g2(&d);
+//    std::cout << "----- h(d) -----\n";
+//    h(d);
+
+    Buldozer b1{"cat", "galben", 7, 222.22};
+    Tractor tr1{55, "bmw"};
+    Muncitor m1;
+    m1.lucreaza(b1);
+    m1.lucreaza(tr1);
+    return 0;
+//}
+
+
+//int main() {
+
+    std::cout << "sizeof(cls1): " << sizeof(cls1) << "\n";
+    std::cout << "sizeof(cls2): " << sizeof(cls2) << "\n";
+    std::cout << "sizeof(cls3): " << sizeof(cls3) << "\n";
+//    tabla0 a, b;
+//    if (&a == &b)
+//        std::cout << "impossible: report error to compiler supplier";
+//    scoala s1, s2;
+//    std::cout << s1 << s2;
+//    (s1 = s2).f();
+//    std::cout << s1 << s2;
+    std::cout << "sizeof(tabla0): " << sizeof(tabla0) << "\n";
+    std::cout << "sizeof(tabla1): " << sizeof(tabla1) << "\n";
+    std::cout << "sizeof(tabla2): " << sizeof(tabla2) << "\n";
+    return 0;
 
     sf::RenderWindow window;
     window.create(sf::VideoMode({800, 700}), "My Window", sf::Style::Default);
     window.setVerticalSyncEnabled(true);
     //window.setFramerateLimit(60);
 
-    while(window.isOpen()) {
+    while (window.isOpen()) {
         sf::Event e;
-        while(window.pollEvent(e)) {
-            switch(e.type) {
+        while (window.pollEvent(e)) {
+            switch (e.type) {
             case sf::Event::Closed:
                 window.close();
                 break;
