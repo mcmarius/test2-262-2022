@@ -21,9 +21,7 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Utilaj &utilaj);
 
-    virtual void sapa() {
-        std::cout << "utilajul sapa\n";
-    }
+    virtual void sapa() = 0;
 };
 
 

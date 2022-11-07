@@ -4,6 +4,7 @@
 #include "Buldozer.h"
 #include "Tractor.h"
 #include "Muncitor.h"
+#include "Macara.h"
 
 class scoala {
     int nr_elevi = 1;
@@ -122,6 +123,9 @@ int main() {
     Muncitor m1;
     m1.lucreaza(b1);
     m1.lucreaza(tr1);
+//    Utilaj u1;
+    Macara mac1;
+    m1.lucreaza(mac1);
     return 0;
 //}
 
