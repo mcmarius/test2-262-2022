@@ -12,9 +12,9 @@ std::ostream &operator<<(std::ostream &os, const Tractor &tractor) {
     return os;
 }
 
-int Tractor::getPow() const {
+/*int Tractor::getPow() const {
     return pow;
-}
+}*/
 
 void Tractor::sapa() {
     poluare += 3;

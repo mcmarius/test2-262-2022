@@ -10,9 +10,10 @@
 
 class Muncitor {
     int xp = 1;
+    std::string nume;
     Utilaj *cadou;
 public:
-    Muncitor(Utilaj *u) : cadou(u->clone()) {}
+    Muncitor(const std::string& nume_, Utilaj *u) : nume(nume_), cadou(u->clone()) {}
 
     void lucreaza(Utilaj &);
 

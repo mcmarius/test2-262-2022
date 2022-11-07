@@ -22,7 +22,7 @@ public:
 
     Utilaj() = default;
 
-    const std::string &getFirma() const;
+    //const std::string &getFirma() const;
 
     friend std::ostream &operator<<(std::ostream &os, const Utilaj &utilaj);
 

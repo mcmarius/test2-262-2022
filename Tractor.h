@@ -20,7 +20,7 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Tractor &tractor);
 
-    int getPow() const;
+    //int getPow() const;
 
     void sapa() override;
 

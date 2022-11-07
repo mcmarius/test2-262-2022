@@ -15,10 +15,10 @@ std::ostream &operator<<(std::ostream &os, const Utilaj &utilaj) {
     return os;
 }
 
-const std::string &Utilaj::getFirma() const {
+/*const std::string &Utilaj::getFirma() const {
     std::cout << "NU MAI FOLOSI FUNCTIA ASTA!!!\n";
     return firma;
-}
+}*/
 
 //Utilaj *Utilaj::clone_urat() {
 //    {

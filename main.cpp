@@ -141,7 +141,7 @@ int main() {
     Buldozer b1{"cat", "galben", 7, 222.22};
     Tractor tr1{55, "bmw"};
 //    auto* tr2 = tr1.clone();
-    Muncitor m1{tr1.clone()};
+    Muncitor m1{"Dorel", tr1.clone()};
 //    delete tr2;
     m1.lucreaza(b1);
     m1.lucreaza(tr1);
