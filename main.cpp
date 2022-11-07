@@ -159,9 +159,9 @@ int main() {
 
 //int main() {
 
-    std::cout << "sizeof(cls1): " << sizeof(cls1) << "\n";
-    std::cout << "sizeof(cls2): " << sizeof(cls2) << "\n";
-    std::cout << "sizeof(cls3): " << sizeof(cls3) << "\n";
+    // std::cout << "sizeof(cls1): " << sizeof(cls1) << "\n";
+    // std::cout << "sizeof(cls2): " << sizeof(cls2) << "\n";
+    // std::cout << "sizeof(cls3): " << sizeof(cls3) << "\n";
 //    tabla0 a, b;
 //    if (&a == &b)
 //        std::cout << "impossible: report error to compiler supplier";
@@ -169,10 +169,10 @@ int main() {
 //    std::cout << s1 << s2;
 //    (s1 = s2).f();
 //    std::cout << s1 << s2;
-    std::cout << "sizeof(tabla0): " << sizeof(tabla0) << "\n";
-    std::cout << "sizeof(tabla1): " << sizeof(tabla1) << "\n";
-    std::cout << "sizeof(tabla2): " << sizeof(tabla2) << "\n";
-    return 0;
+    // std::cout << "sizeof(tabla0): " << sizeof(tabla0) << "\n";
+    // std::cout << "sizeof(tabla1): " << sizeof(tabla1) << "\n";
+    // std::cout << "sizeof(tabla2): " << sizeof(tabla2) << "\n";
+    // return 0;
 
     /*
     sf::RenderWindow window;

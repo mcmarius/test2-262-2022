@@ -31,6 +31,6 @@ const std::string &Utilaj::getFirma() const {
 
 Utilaj::~Utilaj() { std::cout << "destr utilaj\n"; }
 
-void Utilaj::afis(std::ostream &os) const {
+void Utilaj::afis([[maybe_unused]] std::ostream &os) const {
 
 }
