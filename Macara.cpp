@@ -7,3 +7,7 @@
 void Macara::sapa() {
     std::cout << "sapa mai cu spor\n";
 }
+
+Utilaj *Macara::clone() {
+    return new Macara(*this);
+}

@@ -20,3 +20,7 @@ void Tractor::sapa() {
     poluare += 3;
     std::cout << "tractorul polueaza cand sapa\n";
 }
+
+Utilaj *Tractor::clone() {
+    return new Tractor(*this);
+}

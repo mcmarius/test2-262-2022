@@ -13,6 +13,9 @@ class Tractor : public Utilaj {
     int pow;
     int poluare = 2;
 public:
+    Utilaj *clone() override;
+
+public:
     Tractor(int pow, const std::string &firma);
 
     friend std::ostream &operator<<(std::ostream &os, const Tractor &tractor);

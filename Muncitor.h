@@ -10,8 +10,28 @@
 
 class Muncitor {
     int xp = 1;
+    Utilaj *cadou;
 public:
+    Muncitor(Utilaj *u) : cadou(u->clone()) {}
+
     void lucreaza(Utilaj &);
+
+    ~Muncitor() {
+        delete cadou;
+    }
+
+    Muncitor(const Muncitor &other) : xp(other.xp), cadou(other.cadou->clone()) {}
+
+    Muncitor &operator=(Muncitor other) {
+        swap(*this, other);
+        return *this;
+    }
+
+    friend void swap(Muncitor &m1, Muncitor &m2) {
+        using std::swap;
+        swap(m1.xp, m2.xp);
+        swap(m1.cadou, m2.cadou);
+    }
 };
 
 

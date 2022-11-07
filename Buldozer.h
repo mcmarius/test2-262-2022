@@ -17,6 +17,12 @@ class Buldozer : public Utilaj {
 public:
     Buldozer(const std::string &firma, const std::string &culoare, int nrRoti, double greutate);
 
+private:
+    void afis(std::ostream &os) override;
+
+public:
+    Utilaj *clone() override;
+
     Buldozer(const Buldozer &other);
 
     Buldozer &operator=(const Buldozer &other);

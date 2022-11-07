@@ -39,3 +39,11 @@ void Buldozer::sapa() {
     kg += 5;
     std::cout << "buldozerul sapa\n";
 }
+
+Utilaj *Buldozer::clone() {
+    return new Buldozer(*this);
+}
+
+void Buldozer::afis(std::ostream &os) {
+    os << this->greutate << " " << this->nr_roti << "\n";
+}

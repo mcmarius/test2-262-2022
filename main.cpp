@@ -5,6 +5,7 @@
 #include "Tractor.h"
 #include "Muncitor.h"
 #include "Macara.h"
+#include "MotoSapa.h"
 
 class scoala {
     int nr_elevi = 1;
@@ -101,6 +102,23 @@ void h(baza b) {
     b.f();
 }
 
+/*void inspecteaza_1(Utilaj u) {
+    std::cout << "insp 1\n";
+    u.sapa();
+}*/
+
+void inspecteaza_2(Utilaj &u) {
+    std::cout << "insp 2\n";
+    u.sapa();
+    std::cout << "adr u: " << &u << "\n";
+    auto *copie = u.clone();
+    auto *copie2 = copie;
+    copie->sapa();
+    copie2->sapa();
+    delete copie2;
+    std::cout << "adr copie: " << copie << "\n";
+}
+
 
 int main() {
 //    baza b;
@@ -120,12 +138,19 @@ int main() {
 
     Buldozer b1{"cat", "galben", 7, 222.22};
     Tractor tr1{55, "bmw"};
-    Muncitor m1;
+//    auto* tr2 = tr1.clone();
+    Muncitor m1{tr1.clone()};
+//    delete tr2;
     m1.lucreaza(b1);
     m1.lucreaza(tr1);
 //    Utilaj u1;
     Macara mac1;
     m1.lucreaza(mac1);
+    MotoSapa ms;
+    m1.lucreaza(ms);
+//    inspecteaza_1(mac1);
+    inspecteaza_2(mac1);
+    std::cout << "end main\n";
     return 0;
 //}
 

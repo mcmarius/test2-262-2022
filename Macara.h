@@ -10,6 +10,9 @@
 
 class Macara : public Utilaj {
 public:
+    Utilaj *clone() override;
+
+public:
     void sapa() override;
 };
 

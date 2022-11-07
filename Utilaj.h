@@ -12,7 +12,12 @@
 class Utilaj {
     std::string firma = "NoName";
     std::string culoare = "gri";
+    std::string tip;
+
+    virtual void afis(std::ostream &os) const;
+
 public:
+//    Utilaj* clone_urat();
     Utilaj(const std::string &firma, const std::string &culoare);
 
     Utilaj() = default;
@@ -21,8 +26,13 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Utilaj &utilaj);
 
-    virtual void sapa() = 0;
-};
+    virtual void sapa() {
+        std::cout << "sapa si tu pe acolo de sus in jos\n";
+    }
 
+    virtual Utilaj *clone() = 0;
+
+    virtual ~Utilaj();
+};
 
 #endif //OOP_UTILAJ_H
