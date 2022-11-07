@@ -129,7 +129,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Prepare env
         run: |
@@ -190,7 +190,7 @@ jobs:
           xcode-version: '13.4.1'
 
       - name: Cache tools
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         if: runner.os == 'Linux' && matrix.cxx == 'clang++-13'
         id: cache-tools
         with:
@@ -220,7 +220,7 @@ jobs:
 
       # Uncomment when using external dependencies so they will be cached
       - name: Cache deps
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-deps
         # make the key depend on the dependency version
         with:
@@ -232,7 +232,7 @@ jobs:
       # Using the workaround found here: https://github.com/actions/cache/issues/171
       # Since this cache is small, it should not fill the cache too much
       - name: Cache Ninja deps
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         if: matrix.cmake_generator == 'Ninja'
         id: cache-deps-ninja
         with:
@@ -243,7 +243,7 @@ jobs:
           restore-keys: ${{ matrix.os }}-${{ matrix.cxx }}-ninja-cache-
 
       - name: Cache MinGW
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-mingw
         if: runner.os == 'Windows' && matrix.cxx == 'g++'
         with:
@@ -275,7 +275,7 @@ jobs:
             ${{ matrix.cmake_flags }}
 
       # - name: Cache ninja exe
-      #   uses: actions/cache@v2
+      #   uses: actions/cache@v3
       #   id: cache-ninja-exe
       #   if: runner.os == 'Windows' && matrix.cxx == 'cl'
       #   with:
