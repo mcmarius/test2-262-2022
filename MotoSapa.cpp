@@ -4,6 +4,6 @@
 
 #include "MotoSapa.h"
 
-Utilaj *MotoSapa::clone() {
+Utilaj *MotoSapa::clone() const {
     return new MotoSapa(*this);
 }

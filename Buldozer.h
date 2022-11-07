@@ -18,10 +18,10 @@ public:
     Buldozer(const std::string &firma, const std::string &culoare, int nrRoti, double greutate);
 
 private:
-    void afis(std::ostream &os) override;
+    void afis(std::ostream &os) const override;
 
 public:
-    Utilaj *clone() override;
+    Utilaj *clone() const override;
 
     Buldozer(const Buldozer &other);
 

@@ -21,6 +21,6 @@ void Tractor::sapa() {
     std::cout << "tractorul polueaza cand sapa\n";
 }
 
-Utilaj *Tractor::clone() {
+Utilaj *Tractor::clone() const {
     return new Tractor(*this);
 }

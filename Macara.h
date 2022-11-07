@@ -10,7 +10,7 @@
 
 class Macara : public Utilaj {
 public:
-    Utilaj *clone() override;
+    Utilaj *clone() const override;
 
 public:
     void sapa() override;

@@ -40,10 +40,10 @@ void Buldozer::sapa() {
     std::cout << "buldozerul sapa\n";
 }
 
-Utilaj *Buldozer::clone() {
+Utilaj *Buldozer::clone() const {
     return new Buldozer(*this);
 }
 
-void Buldozer::afis(std::ostream &os) {
+void Buldozer::afis(std::ostream &os) const {
     os << this->greutate << " " << this->nr_roti << "\n";
 }

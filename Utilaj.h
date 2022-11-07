@@ -30,7 +30,7 @@ public:
         std::cout << "sapa si tu pe acolo de sus in jos\n";
     }
 
-    virtual Utilaj *clone() = 0;
+    virtual Utilaj *clone() const = 0;
 
     virtual ~Utilaj();
 };

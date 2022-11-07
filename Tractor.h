@@ -13,7 +13,7 @@ class Tractor : public Utilaj {
     int pow;
     int poluare = 2;
 public:
-    Utilaj *clone() override;
+    Utilaj *clone() const override;
 
 public:
     Tractor(int pow, const std::string &firma);

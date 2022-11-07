@@ -7,6 +7,7 @@
 #include "Macara.h"
 #include "MotoSapa.h"
 
+/*
 class scoala {
     int nr_elevi = 1;
 public:
@@ -101,6 +102,7 @@ void g2(baza *b) {
 void h(baza b) {
     b.f();
 }
+*/
 
 /*void inspecteaza_1(Utilaj u) {
     std::cout << "insp 1\n";
@@ -172,6 +174,7 @@ int main() {
     std::cout << "sizeof(tabla2): " << sizeof(tabla2) << "\n";
     return 0;
 
+    /*
     sf::RenderWindow window;
     window.create(sf::VideoMode({800, 700}), "My Window", sf::Style::Default);
     window.setVerticalSyncEnabled(true);
@@ -203,4 +206,5 @@ int main() {
     }
 
     return 0;
+    */
 }
