@@ -8,6 +8,25 @@
 #include "MotoSapa.h"
 #include "exceptii.h"
 
+enum culoare {
+    rosu, galben, albastru
+};
+
+std::ostream &operator<<(std::ostream &os, const culoare &cul) {
+    switch (cul) {
+        case rosu:
+            os << "rosu";
+            break;
+        case galben:
+            os << "galben";
+            break;
+        case albastru:
+            os << "albastru";
+            break;
+    }
+    return os;
+}
+
 //class test1 {
 //    ~test1() = default;
 //public:
