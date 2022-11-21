@@ -12,10 +12,12 @@
 class Tractor : public Utilaj {
     int pow;
     int poluare = 2;
+
+    void afis(std::ostream &os) const override;
+
 public:
     std::shared_ptr<Utilaj> clone() const override;
 
-public:
     Tractor(int pow, const std::string &firma);
 
     friend std::ostream &operator<<(std::ostream &os, const Tractor &tractor);

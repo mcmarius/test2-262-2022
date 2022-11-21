@@ -17,6 +17,11 @@ class Utilaj {
 
     virtual void afis(std::ostream &os) const;
 
+protected:
+    Utilaj(const Utilaj &other) = default;
+
+    Utilaj &operator=(const Utilaj &other) = default;
+
 public:
 //    Utilaj* clone_urat();
     Utilaj(const std::string &firma, const std::string &culoare);

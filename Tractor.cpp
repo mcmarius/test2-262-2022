@@ -30,3 +30,8 @@ void Tractor::sapa() {
 std::shared_ptr<Utilaj> Tractor::clone() const {
     return std::make_shared<Tractor>(*this);
 }
+
+void Tractor::afis(std::ostream &os) const {
+    const auto &tractor = *this;
+    os << "pow: " << tractor.pow;
+}
