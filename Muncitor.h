@@ -18,7 +18,7 @@ class Muncitor {
 public:
     Muncitor(const std::string &nume_, const std::shared_ptr<Utilaj> &u) : nume(nume_), cadoiase({u->clone()}) {}
 
-    void sarbatori(Utilaj &u) {
+    void sarbatori(const Utilaj &u) {
         cadoiase.push_back(u.clone());
     }
 
@@ -30,7 +30,7 @@ public:
     }
 
     Muncitor(const Muncitor &other) : xp(other.xp) {
-        for (auto &cadou: other.cadoiase)
+        for (const auto &cadou: other.cadoiase)
             cadoiase.push_back(cadou->clone());
     }
 
