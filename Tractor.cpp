@@ -27,6 +27,6 @@ void Tractor::sapa() {
     std::cout << "tractorul polueaza cand sapa\n";
 }
 
-Utilaj *Tractor::clone() const {
-    return new Tractor(*this);
+std::shared_ptr<Utilaj> Tractor::clone() const {
+    return std::make_shared<Tractor>(*this);
 }

@@ -4,6 +4,6 @@
 
 #include "MotoSapa.h"
 
-Utilaj *MotoSapa::clone() const {
-    return new MotoSapa(*this);
+std::shared_ptr<Utilaj> MotoSapa::clone() const {
+    return std::make_shared<MotoSapa>(*this);
 }

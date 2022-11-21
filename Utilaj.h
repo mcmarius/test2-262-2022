@@ -8,6 +8,7 @@
 
 #include <string>
 #include <iostream>
+#include <memory>
 
 class Utilaj {
     std::string firma = "NoName";
@@ -30,7 +31,7 @@ public:
         std::cout << "sapa si tu pe acolo de sus in jos\n";
     }
 
-    virtual Utilaj *clone() const = 0;
+    virtual std::shared_ptr<Utilaj> clone() const = 0;
 
     virtual ~Utilaj();
 };

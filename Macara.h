@@ -10,7 +10,7 @@
 
 class Macara : public Utilaj {
 public:
-    Utilaj *clone() const override;
+    std::shared_ptr<Utilaj> clone() const override;
 
 public:
     void sapa() override;

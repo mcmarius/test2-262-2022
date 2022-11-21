@@ -40,8 +40,8 @@ void Buldozer::sapa() {
     std::cout << "buldozerul sapa\n";
 }
 
-Utilaj *Buldozer::clone() const {
-    return new Buldozer(*this);
+std::shared_ptr<Utilaj> Buldozer::clone() const {
+    return std::make_shared<Buldozer>(*this);
 }
 
 void Buldozer::afis(std::ostream &os) const {

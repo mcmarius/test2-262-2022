@@ -140,11 +140,11 @@ void inspecteaza_2(Utilaj &u) {
     std::cout << "insp 2\n";
     u.sapa();
     std::cout << "adr u: " << &u << "\n";
-    auto *copie = u.clone();
-    auto *copie2 = copie;
+    auto copie = u.clone();
+    auto copie2 = copie;
     copie->sapa();
     copie2->sapa();
-    delete copie2;
+//    delete copie2;
     std::cout << "adr copie: " << copie << "\n";
 }
 
@@ -191,7 +191,7 @@ int main() {
 //    inspecteaza_1(mac1);
     inspecteaza_2(mac1);
     std::cout << "end main\n";
-    Muncitor m2{"Gigel", &mac1};
+    Muncitor m2{"Gigel", mac1.clone()};
     m2 = m1;
     return 0;
 //}

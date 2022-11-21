@@ -8,14 +8,15 @@
 
 #include <vector>
 #include <utility>
+#include <memory>
 #include "Utilaj.h"
 
 class Muncitor {
     int xp = 1;
     std::string nume;
-    std::vector<Utilaj *> cadoiase;
+    std::vector<std::shared_ptr<Utilaj>> cadoiase;
 public:
-    Muncitor(const std::string &nume_, Utilaj *u) : nume(nume_), cadoiase({u->clone()}) {}
+    Muncitor(const std::string &nume_, const std::shared_ptr<Utilaj> &u) : nume(nume_), cadoiase({u->clone()}) {}
 
     void sarbatori(Utilaj &u) {
         cadoiase.push_back(u.clone());
@@ -24,8 +25,8 @@ public:
     void lucreaza(Utilaj &);
 
     ~Muncitor() {
-        for (auto &cadou: cadoiase)
-            delete cadou;
+//        for (auto &cadou: cadoiase)
+//            delete cadou;
     }
 
     Muncitor(const Muncitor &other) : xp(other.xp) {

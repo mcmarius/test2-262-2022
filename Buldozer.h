@@ -21,7 +21,7 @@ private:
     void afis(std::ostream &os) const override;
 
 public:
-    Utilaj *clone() const override;
+    std::shared_ptr<Utilaj> clone() const override;
 
     Buldozer(const Buldozer &other);
 

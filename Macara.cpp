@@ -8,6 +8,6 @@ void Macara::sapa() {
     std::cout << "sapa mai cu spor\n";
 }
 
-Utilaj *Macara::clone() const {
-    return new Macara(*this);
+std::shared_ptr<Utilaj> Macara::clone() const {
+    return std::make_shared<Macara>(*this);
 }
