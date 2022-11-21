@@ -174,6 +174,9 @@ int main() {
 //    auto* tr2 = tr1.clone();
 //    delete tr2;
         m1.lucreaza(b1);
+        m1.lucreaza(b1);
+        m1.lucreaza(b1);
+        m1.sarbatori(b1);
         m1.lucreaza(tr1);
     } catch (eroare_impiedicat &) {
         std::cout << "iti prescriem atentie!!!\n";
@@ -188,6 +191,8 @@ int main() {
 //    inspecteaza_1(mac1);
     inspecteaza_2(mac1);
     std::cout << "end main\n";
+    Muncitor m2{"Gigel", &mac1};
+    m2 = m1;
     return 0;
 //}
 

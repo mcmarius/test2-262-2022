@@ -6,24 +6,36 @@
 #define OOP_MUNCITOR_H
 
 
+#include <vector>
+#include <utility>
 #include "Utilaj.h"
 
 class Muncitor {
     int xp = 1;
     std::string nume;
-    Utilaj *cadou;
+    std::vector<Utilaj *> cadoiase;
 public:
-    Muncitor(const std::string& nume_, Utilaj *u) : nume(nume_), cadou(u->clone()) {}
+    Muncitor(const std::string &nume_, Utilaj *u) : nume(nume_), cadoiase({u->clone()}) {}
+
+    void sarbatori(Utilaj &u) {
+        cadoiase.push_back(u.clone());
+    }
 
     void lucreaza(Utilaj &);
 
     ~Muncitor() {
-        delete cadou;
+        for (auto &cadou: cadoiase)
+            delete cadou;
     }
 
-    Muncitor(const Muncitor &other) : xp(other.xp), cadou(other.cadou->clone()) {}
+    Muncitor(const Muncitor &other) : xp(other.xp) {
+        for (auto &cadou: other.cadoiase)
+            cadoiase.push_back(cadou->clone());
+    }
 
     Muncitor &operator=(Muncitor other) {
+//        std::swap(*this, other);
+//        std::exchange(*this, other);
         swap(*this, other);
         return *this;
     }
@@ -31,7 +43,7 @@ public:
     friend void swap(Muncitor &m1, Muncitor &m2) {
         using std::swap;
         swap(m1.xp, m2.xp);
-        swap(m1.cadou, m2.cadou);
+        swap(m1.cadoiase, m2.cadoiase);
     }
 };
 

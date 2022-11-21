@@ -10,4 +10,6 @@ void Muncitor::lucreaza(Utilaj &u) {
     xp++;
     if (xp % 4 == 0)
         throw eroare_impiedicat("cine-a pus bordura-n drum");
+    auto nr = xp % cadoiase.size();
+    cadoiase[nr]->sapa();
 }
