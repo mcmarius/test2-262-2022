@@ -6,6 +6,14 @@
 #include "Muncitor.h"
 #include "Macara.h"
 #include "MotoSapa.h"
+#include "exceptii.h"
+
+//class test1 {
+//    ~test1() = default;
+//public:
+//    ~test1() = delete;
+//};
+
 
 /*
 class scoala {
@@ -123,6 +131,7 @@ void inspecteaza_2(Utilaj &u) {
 
 
 int main() {
+//    test1 t1;
 //    baza b;
 //    derivata d;
 //    std::cout << "----- g1(b) -----\n";
@@ -139,12 +148,19 @@ int main() {
 //    h(d);
 
     Buldozer b1{"cat", "galben", 7, 222.22};
-    Tractor tr1{55, "bmw"};
+
+    Muncitor m1{"Dorel", b1.clone()};
+    try {
+        Tractor tr1{55, "bmw"};
 //    auto* tr2 = tr1.clone();
-    Muncitor m1{"Dorel", tr1.clone()};
 //    delete tr2;
-    m1.lucreaza(b1);
-    m1.lucreaza(tr1);
+        m1.lucreaza(b1);
+        m1.lucreaza(tr1);
+    } catch (eroare_impiedicat &) {
+        std::cout << "iti prescriem atentie!!!\n";
+    } catch (eroare_santier &err) {
+        std::cout << err.what() << "\n";
+    }
 //    Utilaj u1;
     Macara mac1;
     m1.lucreaza(mac1);

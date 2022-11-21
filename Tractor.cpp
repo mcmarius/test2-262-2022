@@ -3,9 +3,13 @@
 //
 
 #include "Tractor.h"
+#include "exceptii.h"
 #include <iostream>
 
-Tractor::Tractor(int pow, const std::string &firma) : Utilaj(firma, "mov"), pow(pow) {}
+Tractor::Tractor(int pow, const std::string &firma) : Utilaj(firma, "mov"), pow(pow) {
+    if (pow < 2000)
+        throw eroare_sarak("vai de noi");
+}
 
 std::ostream &operator<<(std::ostream &os, const Tractor &tractor) {
     os << "pow: " << tractor.pow;
@@ -18,6 +22,8 @@ std::ostream &operator<<(std::ostream &os, const Tractor &tractor) {
 
 void Tractor::sapa() {
     poluare += 3;
+    if (poluare > 13)
+        throw eroare_sapa("s-a blocat");
     std::cout << "tractorul polueaza cand sapa\n";
 }
 
