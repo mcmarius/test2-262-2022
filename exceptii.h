@@ -6,13 +6,16 @@
 #define OOP_EXCEPTII_H
 
 #include <stdexcept>
+#include <string>
 
 class eroare_santier : public std::runtime_error {
     using std::runtime_error::runtime_error;
 };
 
 class eroare_sapa : public eroare_santier {
-    using eroare_santier::eroare_santier;
+//    using eroare_santier::eroare_santier;
+public:
+    explicit eroare_sapa(const std::string &mesaj) : eroare_santier("eroare sapa: " + mesaj) {}
 };
 
 class eroare_impiedicat : public eroare_santier {

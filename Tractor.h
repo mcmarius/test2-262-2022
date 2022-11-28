@@ -7,6 +7,7 @@
 
 #include <iosfwd>
 #include <string>
+#include <ostream>
 #include "Utilaj.h"
 
 class Tractor : public Utilaj {
@@ -20,7 +21,7 @@ public:
 
     Tractor(int pow, const std::string &firma);
 
-    friend std::ostream &operator<<(std::ostream &os, const Tractor &tractor);
+//    friend std::ostream &operator<<(std::ostream &os, const Tractor &tractor);
 
     //int getPow() const;
 

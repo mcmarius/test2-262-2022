@@ -76,7 +76,7 @@ sfml_set_custom_stdlib(sfml-graphics)
 ###############################################################################
 
 # NOTE: update executable name in .github/workflows/cmake.yml when changing name here
-add_executable(${PROJECT_NAME} main.cpp Buldozer.cpp Buldozer.h Tractor.cpp Tractor.h Echipament.h Utilaj.cpp Utilaj.h Muncitor.cpp Muncitor.h Macara.cpp Macara.h MotoSapa.cpp MotoSapa.h exceptii.cpp exceptii.h)
+add_executable(${PROJECT_NAME} main.cpp Buldozer.cpp Buldozer.h Tractor.cpp Tractor.h Echipament.h Utilaj.cpp Utilaj.h Muncitor.cpp Muncitor.h Macara.cpp Macara.h MotoSapa.cpp MotoSapa.h exceptii.cpp exceptii.h Echipament.cpp)
 
 ###############################################################################
 

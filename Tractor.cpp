@@ -5,16 +5,13 @@
 #include "Tractor.h"
 #include "exceptii.h"
 #include <iostream>
+#include "Echipament.h"
 
 Tractor::Tractor(int pow, const std::string &firma) : Utilaj(firma, "mov"), pow(pow) {
     if (pow < 2000)
-        throw eroare_sarak("vai de noi");
+        throw eroare_sarak("vai de noi; avem pow doar " + std::to_string(pow));
 }
 
-std::ostream &operator<<(std::ostream &os, const Tractor &tractor) {
-    os << "pow: " << tractor.pow;
-    return os;
-}
 
 /*int Tractor::getPow() const {
     return pow;
@@ -35,3 +32,8 @@ void Tractor::afis(std::ostream &os) const {
     const auto &tractor = *this;
     os << "pow: " << tractor.pow;
 }
+
+//std::ostream &operator<<(std::ostream &os, const Tractor &tractor) {
+//    os << static_cast<const Utilaj &>(tractor) ;//<< " pow: " << tractor.pow << " poluare: " << tractor.poluare;
+//    return os;
+//}

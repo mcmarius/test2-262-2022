@@ -7,6 +7,7 @@
 #include "Macara.h"
 #include "MotoSapa.h"
 #include "exceptii.h"
+#include "Echipament.h"
 
 enum culoare {
     rosu, galben, albastru
@@ -26,6 +27,41 @@ std::ostream &operator<<(std::ostream &os, const culoare &cul) {
     }
     return os;
 }
+
+/// singleton pattern
+class aplicatie {
+    aplicatie() = default;
+
+public:
+    aplicatie(const aplicatie &) = delete;
+
+    aplicatie &operator=(const aplicatie &) = delete;
+
+    static aplicatie &get_app() {
+        static aplicatie app;
+        return app;
+    }
+};
+
+class aplicatie2 {
+    static aplicatie2 *app;
+
+    aplicatie2() = default;
+
+public:
+    aplicatie2(const aplicatie2 &) = delete;
+
+    aplicatie2 &operator=(const aplicatie2 &) = delete;
+
+    static aplicatie2 *get_app() {
+        if (app == nullptr)
+            app = new aplicatie2;
+        return app;
+    }
+};
+
+aplicatie2 *aplicatie2::app = nullptr;
+
 
 //class test1 {
 //    ~test1() = default;
@@ -148,8 +184,25 @@ void inspecteaza_2(Utilaj &u) {
     std::cout << "adr copie: " << copie << "\n";
 }
 
+//class Chestie {
+//public:
+//    Chestie(std::string){}
+//};
+//
+//void f(Chestie) {}
+//void f(Echipament) {}
 
 int main() {
+//    using namespace std::string_literals;
+    Echipament router1{"Cisco 2911"}, switch1{"Cisco 2960"};
+    Echipament e2 = router1;
+    std::cout << e2 << "\n";
+    e2 = switch1;
+    std::cout << e2 << "\n\n\n";
+//    f("asd"s);
+//    Echipament e3 = "Cisco 666"s;
+//    Echipament e4("Cisco 666");
+//    Echipament e5{"Cisco 666"};
 //    test1 t1;
 //    baza b;
 //    derivata d;
@@ -178,8 +231,8 @@ int main() {
         m1.lucreaza(b1);
         m1.sarbatori(b1);
         m1.lucreaza(tr1);
-    } catch (eroare_impiedicat &) {
-        std::cout << "iti prescriem atentie!!!\n";
+    } catch (eroare_impiedicat &err) {
+        std::cout << "iti prescriem atentie!!!\n" << err.what();
     } catch (eroare_santier &err) {
         std::cout << err.what() << "\n";
     }
