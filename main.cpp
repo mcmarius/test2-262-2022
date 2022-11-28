@@ -41,8 +41,10 @@ public:
         static aplicatie app;
         return app;
     }
+    void start() { std::cout << "merge\n"; }
 };
 
+/*
 class aplicatie2 {
     static aplicatie2 *app;
 
@@ -61,7 +63,7 @@ public:
 };
 
 aplicatie2 *aplicatie2::app = nullptr;
-
+*/
 
 //class test1 {
 //    ~test1() = default;
@@ -193,6 +195,8 @@ void inspecteaza_2(Utilaj &u) {
 //void f(Echipament) {}
 
 int main() {
+    auto& app = aplicatie::get_app();
+    app.start();
 //    using namespace std::string_literals;
     Echipament router1{"Cisco 2911"}, switch1{"Cisco 2960"};
     Echipament e2 = router1;
