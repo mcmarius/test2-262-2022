@@ -9,6 +9,7 @@
 #include "exceptii.h"
 #include "Echipament.h"
 #include "MotoRestanta.h"
+#include "Facultate.h"
 
 enum culoare {
     rosu, galben, albastru
@@ -195,8 +196,11 @@ void inspecteaza_2(Utilaj &u) {
 //void f(Chestie) {}
 //void f(Echipament) {}
 
+
 int main() {
-    auto& app = aplicatie::get_app();
+    Facultate<int, std::string> fmi{5, "fmi"};
+    Facultate<long long, std::string> umf{10, "umf"};
+    auto &app = aplicatie::get_app();
     app.start();
 //    using namespace std::string_literals;
     Echipament router1{"Cisco 2911"}, switch1{"Cisco 2960"};
