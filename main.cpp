@@ -8,6 +8,7 @@
 #include "MotoSapa.h"
 #include "exceptii.h"
 #include "Echipament.h"
+#include "MotoRestanta.h"
 
 enum culoare {
     rosu, galben, albastru
@@ -235,6 +236,8 @@ int main() {
         m1.lucreaza(b1);
         m1.sarbatori(b1);
         m1.lucreaza(tr1);
+        MotoRestanta mtr{0};
+        m1.lucreaza(mtr);
     } catch (eroare_impiedicat &err) {
         std::cout << "iti prescriem atentie!!!\n" << err.what();
     } catch (eroare_santier &err) {
